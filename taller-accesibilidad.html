@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Accesibilidad</title>
+    <style>
+        /* Estilo general de la página. */
+        body {
+            background-color: #fff;
+            color: #333;
+            font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+            padding: 1em;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        /* Los dos botones tienen el mismo estilo. */
+        .button {
+            color: white;
+            background-color: blue;
+            border-radius: 10px;
+            width: 170px;
+            padding: 10px;
+            text-align: center;
+            border: 0;
+            font: inherit;
+        }
+
+        form {
+            width: 400px;
+            max-width: 100%;
+        }
+
+        fieldset {
+            min-width: 0;
+        }
+
+        form ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Esta distribución solo se aplica a los campos del formulario. */
+        form li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        form input {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Laboratorio de Accesibilidad</h1>
+        <p>Estudiantes: Yongsheng Du y ____________________</p>
+        <p>Cédulas: ____________________ y ____________________</p>
+        <p>Fecha: ____________________ | Grupo: ____________________</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>PROBLEMA 1</h2>
+
+            <section lang="en">
+                <h3>Need help?</h3>
+                <p>If you have any problems with our products, our support center
+                    can offer you all the help you need, whether you want:</p>
+
+                <!-- Los tipos de ayuda forman una lista numerada. -->
+                <ol>
+                    <li>Advice choosing a new product</li>
+                    <li>Tech support on an existing product</li>
+                    <li>Refund and cancellation assistance</li>
+                </ol>
+
+                <h4>Contact us now</h4>
+                <p>Our help center contains live chat, e-mail addresses, and phone numbers.</p>
+                <button type="button" class="button">Find Contact Details</button>
+
+                <h4>Find out answers</h4>
+                <p>Our Forums section contains a large knowledge base of searchable
+                    previously asked questions, and you can always ask a new question
+                    if you can't find the answer you're looking for.</p>
+                <button type="button" class="button">Access Forums</button>
+            </section>
+        </section>
+
+        <section>
+            <h2>PROBLEMA 2</h2>
+
+            <form lang="en">
+                <!-- Los tres campos pertenecen al mismo grupo. -->
+                <fieldset>
+                    <legend>Personal data</legend>
+                    <ul>
+                        <!-- El atributo for coincide con el id del campo. -->
+                        <li>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name">
+                        </li>
+                        <li>
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age">
+                        </li>
+                        <li>
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email">
+                        </li>
+                    </ul>
+                </fieldset>
+            </form>
+        </section>
+
+        <section>
+            <h2>PROBLEMA 3</h2>
+
+            <!-- Cada enlace indica qué página o documento se va a abrir. -->
+            <p lang="en">For more information about our activities, check out our
+                <a href="/fundraising">fundraising page</a>,
+                <a href="/education">education page</a>,
+                <a href="/resources/sponsorship.pdf">sponsorship pack (PDF, 8 MB)</a>,
+                and <a href="/resources/assessments.docx">assessment sheets (Word document)</a>.
+                You will need an application that can open Word documents to use the assessment sheets.</p>
+        </section>
+    </main>
+</body>
+</html>
